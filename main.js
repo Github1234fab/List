@@ -53,7 +53,7 @@ buttonTyping.addEventListener("click", function () {
       addProduct(ProductEntries);
     }
     } else {
-      ulList.innerHTML="Pas de produits !"
+      ulList.innerHTML="Pas de produits dans la liste !"
     }
 
   });

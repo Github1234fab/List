@@ -4,23 +4,25 @@
   box-sizing: border-box;
   font-family: poppins;
 }
+body{
+  user-select: none;
+}
 .container-app {
   display: flex;
   flex-direction: column;
   padding: 40px;
-  margin-top: 20%;
+ margin: auto;
+ margin-top: 30px;
+
   width: 40%;
   height: auto;
   border-radius: 20px;
   background-color: violet;
-  margin-top: 50%;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: 2px 2px 5px grey;
 }
 .image {
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
   margin: 0 auto;
 }
 .wrapper-typing {
@@ -42,17 +44,21 @@
 .input-typing::placeholder {
   color: blue;
 }
+.input-typing:hover{
+  cursor: pointer;
+}
 .button-typing {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(165, 42, 97);
+  background-color: rgb(42, 2, 42);
   color: white;
   font-size: 1em;
   text-transform: lowercase;
 }
 .button-typing:hover {
   background-color: black;
+    cursor: pointer;
 }
 .ul-list {
   font-size: 1em;
@@ -72,6 +78,7 @@ li {
   text-align: center;
   padding: 10px;
   border-radius: 0.5em;
+  background-color: rgb(162, 30, 162);
 }
 li:hover {
   background-color: rgb(92, 70, 74);
