@@ -60,7 +60,6 @@ buttonTyping.addEventListener("click", function () {
 });
 
 
-
 function clearInput() {
   inputTyping.value = "";
 }
@@ -84,6 +83,71 @@ function addProduct(item) {
 
   ulList.append(newProduct);
 }
+
+
+
+
+
+
+
+
+
+
+ // Remplacez ces valeurs par celles de votre propre projet Firebase
+    var firebaseConfig = {
+      apiKey: "VOTRE_API_KEY",
+      authDomain: "VOTRE_AUTH_DOMAIN",
+      projectId: "VOTRE_PROJECT_ID",
+      storageBucket: "VOTRE_STORAGE_BUCKET",
+      messagingSenderId: "VOTRE_MESSAGING_SENDER_ID",
+      appId: "VOTRE_APP_ID"
+    };
+
+    // Initialisez Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Récupération des champs d'entrée
+    var emailInput = document.getElementById("emailInput");
+    var passwordInput = document.getElementById("passwordInput");
+
+    // Inscription avec email et mot de passe
+    function signUp() {
+      var email = emailInput.value;
+      var password = passwordInput.value;
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          var user = userCredential.user;
+          console.log("Utilisateur inscrit :", user);
+        })
+        .catch((error) => {
+          console.error("Erreur d'inscription :", error);
+        });
+    }
+
+    // Connexion avec email et mot de passe
+    function signIn() {
+      var email = emailInput.value;
+      var password = passwordInput.value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          var user = userCredential.user;
+          console.log("Utilisateur connecté :", user);
+        })
+        .catch((error) => {
+          console.error("Erreur de connexion :", error);
+        });
+    }
+
+    // Déconnexion
+    function signOut() {
+      firebase.auth().signOut().then(() => {
+        console.log("Utilisateur déconnecté");
+      }).catch((error) => {
+        console.error("Erreur de déconnexion :", error);
+      });
+    }
 
 
 

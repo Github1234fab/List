@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="site.webmanisfet" />
+    <script src="https://kit.fontawesome.com/34232c07fe.js" crossorigin="anonymous"></script>
     <title>Add to cart</title>
   </head>
   <body>
@@ -23,8 +24,21 @@
       </div>
       <div class="wrapper-list">
         <ul class="ul-list"></ul>
+        <!-- <i class="fa-solid fa-trash-can "></i> -->
+
+        <!-- Vos champs de saisie d'email et de mot de passe -->
+        <input type="email" id="emailInput" placeholder="Adresse e-mail" />
+        <input type="password" id="passwordInput" placeholder="Mot de passe" />
+
+        <!-- Boutons pour les actions d'inscription et de connexion -->
+        <button onclick="signUp()">S'inscrire</button>
+        <button onclick="signIn()">Se connecter</button>
+        <button onclick="signOut()">Se déconnecter</button>
       </div>
     </div>
+    <!-- Ajoutez ces scripts juste avant la fermeture de la balise body -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
     <script src="main.js" type="module"></script>
   </body>
